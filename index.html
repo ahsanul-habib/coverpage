@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
-  <title>Assignment & Lab Cover Generator</title>
+    <title>Assignment & Lab Cover Generator</title>
 </head>
 
 <body>
@@ -52,7 +52,8 @@
         <input type="text" id="roll" name="roll_assign" value="2103" required /><br /><br />
         <label for="date_assign">Date Of Submission:</label>
         <input type="text" id="date_assign" name="date_assign" required /><br /><br />
-        <input type="file" id="pdfFileInput" accept=".pdf" />
+        <label for="upload_sample_assign">Upload Sample PDF:</label>
+        <input type="file" name="upload_sample_assign" id="pdfFileInputAssign" accept=".pdf" />
 
         <button class="btn btn-success" placeholder="Submit" onclick="MakeAssignment()">
           Generate PDF
@@ -95,7 +96,8 @@
         <input type="text" id="roll_lab" name="roll_lab" value="2103" required /><br />
         <label for="date_lab">Date Of Submission:</label>
         <input type="text" id="date_lab" name="date_lab" required /><br /><br />
-        <input type="file" id="pdfFileInputLab" accept=".pdf" />
+        <label for="upload_sample_lab">Upload Sample PDF:</label>
+        <input type="file" name="upload_sample_lab" id="pdfFileInputLab" accept=".pdf" />
 
         <button class="btn btn-success" placeholder="Submit" onclick="MakeLabCover()">
           Generate PDF

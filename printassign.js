@@ -1,5 +1,5 @@
 async function MakeAssignment() {
-  const fileInput = document.getElementById("pdfFileInput");
+  const fileInput = document.getElementById("pdfFileInputAssign");
   const textInput = document.getElementById("course_code").value;
   const textInputTemp = course_details[textInput].name;
 
