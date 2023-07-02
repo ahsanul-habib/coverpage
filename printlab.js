@@ -128,7 +128,7 @@ async function MakeLabCover() {
 
     const link = document.createElement("a");
     link.href = url;
-    link.download = "modified_pdf.pdf";
+    link.download = experimentName+" Lab Cover.pdf";
     link.click();
 
     URL.revokeObjectURL(url);
