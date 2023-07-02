@@ -1,4 +1,4 @@
-async function MakeAssignment() {
+sync function MakeAssignment() {
   const fileInput = document.getElementById("pdfFileInputAssign");
   const textInput = document.getElementById("course_code").value;
   const textInputTemp = course_details[textInput].name;
@@ -122,7 +122,7 @@ async function MakeAssignment() {
 
     const link = document.createElement("a");
     link.href = url;
-    link.download = "modified_pdf.pdf";
+    link.download = assignmentName+" Assignment.pdf";
     link.click();
 
     URL.revokeObjectURL(url);
