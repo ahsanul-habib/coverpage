@@ -17,7 +17,7 @@ async function MakeLabCover() {
     const page = pdfDoc.getPages()[0];
     page.drawText(textInputTemp, {
       x: 210,
-      y: 350,
+      y: 317,
       size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
@@ -26,7 +26,7 @@ async function MakeLabCover() {
     const courseCode = course_details[textInput].code;
     page.drawText(courseCode, {
       x: 210,
-      y: 317,
+      y: 350,
       size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
