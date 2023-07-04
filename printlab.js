@@ -1,7 +1,7 @@
 var form = document.getElementById("formDataLab");
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-  // Get the form data
+
   var courseCode = document.getElementById("course_code_lab").value;
   var teacherName = document.getElementById("teacher_name_lab").value;
   var experimentName = document.getElementById("experiment_name").value;
@@ -9,7 +9,6 @@ form.addEventListener("submit", function (e) {
   var roll = document.getElementById("roll_lab").value;
   var dateOfSubmission = document.getElementById("date_lab").value;
 
-  // Create a FormData object to store the form data
   var formData = new FormData();
   formData.append("courseCode", courseCode);
   formData.append("teacherName", teacherName);
@@ -18,7 +17,6 @@ form.addEventListener("submit", function (e) {
   formData.append("roll", roll);
   formData.append("dateOfSubmission", dateOfSubmission);
 
-  // Send an AJAX request to the process.php file
   var xhr = new XMLHttpRequest();
   xhr.open(
     "POST",
@@ -27,7 +25,6 @@ form.addEventListener("submit", function (e) {
   );
   xhr.onreadystatechange = function () {
     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-      // Handle the response from the server
       console.log(xhr.responseText);
     }
   };
@@ -38,7 +35,7 @@ async function MakeLabCover() {
   const textInput = document.getElementById("course_code_lab").value;
   const textInputTemp = course_details[textInput].name;
 
-  const fileUrl = "https://smartcoverbuilder.000webhostapp.com/LabCover.pdf"; // Replace with your file link
+  const fileUrl = "https://smartcoverbuilder.000webhostapp.com/LabCover.pdf";
 
   const response = await fetch(fileUrl);
   const pdfBytes = await response.arrayBuffer();
@@ -165,6 +162,35 @@ async function MakeLabCover() {
   const link = document.createElement("a");
   link.href = url;
   link.download = experimentName + " Lab Cover.pdf";
+  link.click();
+
+  URL.revokeObjectURL(url);
+}
+
+async function downloadLabCover() {
+  const textInput = document.getElementById("course_code_lab").value;
+  const textInputTemp = course_details[textInput].name;
+
+  const fileUrl = "https://smartcoverbuilder.000webhostapp.com/LabCover.pdf";
+
+  const response = await fetch(fileUrl);
+  const pdfBytes = await response.arrayBuffer();
+
+  const pdfDoc = await PDFLib.PDFDocument.load(pdfBytes);
+
+  const timesNewRomanFont = await pdfDoc.embedFont(
+    PDFLib.StandardFonts.TimesRoman
+  );
+
+  const page = pdfDoc.getPages()[0];
+
+  const modifiedPDFBytes = await pdfDoc.save();
+  const blob = new Blob([modifiedPDFBytes], { type: "application/pdf" });
+  const url = URL.createObjectURL(blob);
+
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "Lab Cover.pdf";
   link.click();
 
   URL.revokeObjectURL(url);

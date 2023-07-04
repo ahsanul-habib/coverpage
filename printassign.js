@@ -2,14 +2,12 @@ var form = document.getElementById("formData");
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  // Get the form data
   var courseCode = document.getElementById("course_code").value;
   var teacherName = document.getElementById("teacher_name").value;
   var assignmentName = document.getElementById("assign_name").value;
   var roll = document.getElementById("roll").value;
   var dateOfSubmission = document.getElementById("date_assign").value;
 
-  // Create a FormData object to store the form data
   var formData = new FormData();
   formData.append("courseCode", courseCode);
   formData.append("teacherName", teacherName);
@@ -17,7 +15,6 @@ form.addEventListener("submit", function (e) {
   formData.append("roll", roll);
   formData.append("dateOfSubmission", dateOfSubmission);
 
-  // Send an AJAX request to the process.php file
   var xhr = new XMLHttpRequest();
   xhr.open(
     "POST",
@@ -26,7 +23,6 @@ form.addEventListener("submit", function (e) {
   );
   xhr.onreadystatechange = function () {
     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-      // Handle the response from the server
       console.log(xhr.responseText);
     }
   };
@@ -37,7 +33,7 @@ async function MakeAssignment() {
   const textInput = document.getElementById("course_code").value;
   const textInputTemp = course_details[textInput].name;
 
-  const fileUrl = "https://smartcoverbuilder.000webhostapp.com/Assignment.pdf"; // Replace with your file link
+  const fileUrl = "https://smartcoverbuilder.000webhostapp.com/Assignment.pdf";
 
   const response = await fetch(fileUrl);
   const pdfBytes = await response.arrayBuffer();
@@ -156,6 +152,35 @@ async function MakeAssignment() {
   const link = document.createElement("a");
   link.href = url;
   link.download = assignmentName + " Assignment.pdf";
+  link.click();
+
+  URL.revokeObjectURL(url);
+}
+
+async function downloadAssignment() {
+  const textInput = document.getElementById("course_code").value;
+  const textInputTemp = course_details[textInput].name;
+
+  const fileUrl = "https://smartcoverbuilder.000webhostapp.com/Assignment.pdf";
+
+  const response = await fetch(fileUrl);
+  const pdfBytes = await response.arrayBuffer();
+
+  const pdfDoc = await PDFLib.PDFDocument.load(pdfBytes);
+
+  const timesNewRomanFont = await pdfDoc.embedFont(
+    PDFLib.StandardFonts.TimesRoman
+  );
+
+  const page = pdfDoc.getPages()[0];
+
+  const modifiedPDFBytes = await pdfDoc.save();
+  const blob = new Blob([modifiedPDFBytes], { type: "application/pdf" });
+  const url = URL.createObjectURL(blob);
+
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "Assignment.pdf";
   link.click();
 
   URL.revokeObjectURL(url);
