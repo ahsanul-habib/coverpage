@@ -229,6 +229,12 @@ body {
       rgba(199, 183, 183, 0.95)
     );
   }
+  #roll {
+    margin-left: 12%;
+  }
+  #roll_lab {
+    margin: 0% auto 5% 11%;
+  }
   .btn {
     transform: scale(1.3);
   }
