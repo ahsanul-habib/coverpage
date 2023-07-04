@@ -217,6 +217,7 @@ body {
 @media (max-width: 600px) {
   .popup-content {
     transform: scale(2);
+    max-width: 150%;
   }
   .popup.open .popup-content {
     transform: scale(1.5);
