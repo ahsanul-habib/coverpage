@@ -30,10 +30,10 @@ body {
   color: #fff;
   border-radius: 5px;
   background-image: linear-gradient(
-          to bottom right,
-          rgb(9, 130, 59),
-          rgb(64, 199, 30)
-        );
+    to bottom right,
+    rgb(9, 130, 59),
+    rgb(64, 199, 30)
+  );
 }
 
 .btn:hover {
