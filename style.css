@@ -223,11 +223,11 @@ body {
 
 @media (max-width: 600px) {
   .popup-content {
-    transform: scale(2);
+    transform: scale(1.5);
     max-width: 150%;
   }
   .popup.open .popup-content {
-    transform: scale(1.5);
+    transform: scale(1.2);
   }
   body {
     background-image: linear-gradient(
