@@ -1,4 +1,5 @@
 var form = document.getElementById("formDataLab");
+
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -32,6 +33,9 @@ form.addEventListener("submit", function (e) {
 });
 
 async function MakeLabCover() {
+  const button = document.querySelector(".labgnr");
+  button.innerText = "Generating...";
+
   const fileUrl = "https://smartcoverbuilder.000webhostapp.com/LabCover.pdf";
 
   const response = await fetch(fileUrl);
@@ -165,9 +169,14 @@ async function MakeLabCover() {
   link.click();
 
   URL.revokeObjectURL(url);
+
+  button.innerText = "Generate PDF";
 }
 
 async function downloadLabCover() {
+  const button = document.querySelector(".labdow");
+  button.innerText = "Downloading...";
+
   const fileUrl = "https://smartcoverbuilder.000webhostapp.com/LabCover.pdf";
 
   const response = await fetch(fileUrl);
@@ -185,4 +194,6 @@ async function downloadLabCover() {
   link.click();
 
   URL.revokeObjectURL(url);
+
+  button.innerText = "Lab Cover";
 }

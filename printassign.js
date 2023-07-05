@@ -1,4 +1,5 @@
 var form = document.getElementById("formData");
+
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -30,6 +31,9 @@ form.addEventListener("submit", function (e) {
 });
 
 async function MakeAssignment() {
+  const button = document.querySelector(".assgnr");
+  button.innerText = "Generating...";
+
   const fileUrl = "https://smartcoverbuilder.000webhostapp.com/Assignment.pdf";
 
   const response = await fetch(fileUrl);
@@ -155,9 +159,14 @@ async function MakeAssignment() {
   link.click();
 
   URL.revokeObjectURL(url);
+
+  button.innerText = "Generate PDF";
 }
 
 async function downloadAssignment() {
+  const button = document.querySelector(".assdow");
+  button.innerText = "Downloading...";
+
   const fileUrl = "https://smartcoverbuilder.000webhostapp.com/Assignment.pdf";
 
   const response = await fetch(fileUrl);
@@ -175,4 +184,6 @@ async function downloadAssignment() {
   link.click();
 
   URL.revokeObjectURL(url);
+
+  button.innerText = "Assignment";
 }
