@@ -30,9 +30,6 @@ form.addEventListener("submit", function (e) {
 });
 
 async function MakeAssignment() {
-  const textInput = document.getElementById("course_code").value;
-  const textInputTemp = course_details[textInput].name;
-
   const fileUrl = "https://smartcoverbuilder.000webhostapp.com/Assignment.pdf";
 
   const response = await fetch(fileUrl);
@@ -44,6 +41,10 @@ async function MakeAssignment() {
     PDFLib.StandardFonts.TimesRoman
   );
 
+  const textInput = document.getElementById("course_code").value;
+  const textInputTemp = course_details[textInput].name;
+  const courseCode = course_details[textInput].code;
+
   const page = pdfDoc.getPages()[0];
   page.drawText(textInputTemp, {
     x: 210,
@@ -53,7 +54,6 @@ async function MakeAssignment() {
     color: PDFLib.rgb(0, 0, 0),
   });
 
-  const courseCode = course_details[textInput].code;
   page.drawText(courseCode, {
     x: 210,
     y: 317,
@@ -158,21 +158,12 @@ async function MakeAssignment() {
 }
 
 async function downloadAssignment() {
-  const textInput = document.getElementById("course_code").value;
-  const textInputTemp = course_details[textInput].name;
-
   const fileUrl = "https://smartcoverbuilder.000webhostapp.com/Assignment.pdf";
 
   const response = await fetch(fileUrl);
   const pdfBytes = await response.arrayBuffer();
 
   const pdfDoc = await PDFLib.PDFDocument.load(pdfBytes);
-
-  const timesNewRomanFont = await pdfDoc.embedFont(
-    PDFLib.StandardFonts.TimesRoman
-  );
-
-  const page = pdfDoc.getPages()[0];
 
   const modifiedPDFBytes = await pdfDoc.save();
   const blob = new Blob([modifiedPDFBytes], { type: "application/pdf" });

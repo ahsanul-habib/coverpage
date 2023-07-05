@@ -1,18 +1,264 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
     <title>Assignment & Lab Cover Generator</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <style>
-      .btn{
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 100vw;
+        height: 100vh;
+        background-image: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.9),
+          rgba(199, 199, 199, 0.95)
+        );
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+      }
+
+      .btn {
+        margin: 10px;
+        font-size: 16px;
+        transition: transform 0.2s, box-shadow 0.2s;
+        background-color: orange;
+        color: #fff;
+        border-radius: 5px;
+        background-image: linear-gradient(
+          to bottom right,
+          rgb(9, 130, 59),
+          rgb(64, 199, 30)
+        );
+      }
+
+      .btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .popup {
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(12px);
+        z-index: -99;
+      }
+
+      .popup-content {
+        transform: scale(1.3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        opacity: 0;
+      }
+
+      .popup.open {
+        opacity: 1;
+        transition: opacity 0.1s;
+        z-index: 99;
+      }
+
+      .popup.open .popup-content {
+        opacity: 1;
+        transform: scale(1);
+        transition: opacity 0.2s, transform 0.2s;
+        z-index: 99;
+      }
+
+      .form-container {
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        max-width: 400px;
+        text-align: center;
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        font-size: 24px;
+        font-weight: bold;
+        transition: transform 0.3s;
+      }
+
+      .close-btn {
+        position: absolute;
+        top: -10px;
+        font-size: 60px;
+        font-weight: 900;
+        color: #ffffff;
+      }
+
+      .close-btn:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+
+      .teacher_name {
+        margin: 5% auto;
+      }
+
+      .roll_assign,
+      .roll_lab {
+        position: absolute;
+        margin-left: 0%;
+      }
+
+      #roll {
+        margin-left: 42%;
+        border: none;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 5px;
+        font-size: 16px;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+
+      #date_assign {
+        margin-left: 3%;
+        border: none;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 5px;
+        font-size: 16px;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+
+      #experiment_number {
+        margin: 5% auto 0% 6%;
+        border: none;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 5px;
+        font-size: 16px;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .roll_lab {
+        position: absolute;
+        margin-left: 0%;
+      }
+
+      #roll_lab {
+        margin: 0% auto 5% 41%;
+        border: none;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 5px;
+        font-size: 16px;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+
+      #date_lab {
+        margin-left: 2%;
+        border: none;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 5px;
+        font-size: 16px;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+
+      #experiment_name,
+      #assign_name {
+        border: none;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 5px;
+        font-size: 16px;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        font-size: 16px;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-select option {
+        background-color: rgb(246, 246, 246);
+      }
+
+      .form-select:focus {
+        border-color: #ff5a1f;
+        box-shadow: 0 0 0 0.3rem rgba(255, 69, 0, 0.25);
+      }
+
+      .course_code {
+        margin-top: 8%;
+      }
+
+      .btn {
         padding: 10px 20px !important;
+        border: none !important;
+      }
+
+      @media (max-width: 600px) {
+        .popup-content {
+          transform: scale(2);
+          max-width: 150%;
+        }
+        .popup.open .popup-content {
+          transform: scale(1.5);
+        }
+        body {
+          background-image: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.9),
+            rgba(199, 183, 183, 0.95)
+          );
+        }
+        #roll {
+          margin-left: 12%;
+        }
+        #roll_lab {
+          margin: 0% auto 5% 11%;
+        }
+        .btn {
+          transform: scale(1.3);
+        }
+        .btn:hover {
+          transform: scale(1.5);
+        }
       }
     </style>
   </head>

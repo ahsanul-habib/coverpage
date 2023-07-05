@@ -32,9 +32,6 @@ form.addEventListener("submit", function (e) {
 });
 
 async function MakeLabCover() {
-  const textInput = document.getElementById("course_code_lab").value;
-  const textInputTemp = course_details[textInput].name;
-
   const fileUrl = "https://smartcoverbuilder.000webhostapp.com/LabCover.pdf";
 
   const response = await fetch(fileUrl);
@@ -46,6 +43,10 @@ async function MakeLabCover() {
     PDFLib.StandardFonts.TimesRoman
   );
 
+  const textInput = document.getElementById("course_code_lab").value;
+  const textInputTemp = course_details[textInput].name;
+  const courseCode = course_details[textInput].code;
+
   const page = pdfDoc.getPages()[0];
   page.drawText(textInputTemp, {
     x: 210,
@@ -55,7 +56,6 @@ async function MakeLabCover() {
     color: PDFLib.rgb(0, 0, 0),
   });
 
-  const courseCode = course_details[textInput].code;
   page.drawText(courseCode, {
     x: 210,
     y: 350,
@@ -117,6 +117,7 @@ async function MakeLabCover() {
   const teacherName = document.getElementById("teacher_name_lab").value;
   const teacherNameText = teacher_list[teacherName].name;
   const teacherDesignation = teacher_list[teacherName].designation;
+
   page.drawText(teacherNameText, {
     x: 320,
     y: 170,
@@ -154,7 +155,6 @@ async function MakeLabCover() {
     color: PDFLib.rgb(0, 0, 0),
   });
 
-  // Save and download the modified PDF
   const modifiedPDFBytes = await pdfDoc.save();
   const blob = new Blob([modifiedPDFBytes], { type: "application/pdf" });
   const url = URL.createObjectURL(blob);
@@ -168,21 +168,12 @@ async function MakeLabCover() {
 }
 
 async function downloadLabCover() {
-  const textInput = document.getElementById("course_code_lab").value;
-  const textInputTemp = course_details[textInput].name;
-
   const fileUrl = "https://smartcoverbuilder.000webhostapp.com/LabCover.pdf";
 
   const response = await fetch(fileUrl);
   const pdfBytes = await response.arrayBuffer();
 
   const pdfDoc = await PDFLib.PDFDocument.load(pdfBytes);
-
-  const timesNewRomanFont = await pdfDoc.embedFont(
-    PDFLib.StandardFonts.TimesRoman
-  );
-
-  const page = pdfDoc.getPages()[0];
 
   const modifiedPDFBytes = await pdfDoc.save();
   const blob = new Blob([modifiedPDFBytes], { type: "application/pdf" });

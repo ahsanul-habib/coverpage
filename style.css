@@ -34,7 +34,6 @@ body {
     rgb(230, 67, 38),
     rgb(243, 170, 35)
   );
-  border: none !important;
 }
 
 .btn:hover {
@@ -112,7 +111,8 @@ body {
   margin: 5% auto;
 }
 
-.roll_assign {
+.roll_assign,
+.roll_lab {
   position: absolute;
   margin-left: 0%;
 }
@@ -212,6 +212,11 @@ body {
 
 .course_code {
   margin-top: 8%;
+}
+
+.btn {
+  padding: 10px 20px !important;
+  border: none !important;
 }
 
 @media (max-width: 600px) {
