@@ -1,0 +1,22 @@
+{
+  "cse1201": {
+    "code": "CSE 1201",
+    "name": "Data Structure"
+  },
+  "cse1203": {
+    "code": "CSE 1203",
+    "name": "Object Oriented Programming"
+  },
+  "eee1251": {
+    "code": "EEE 1251",
+    "name": "Electronic Devices and Circuits"
+  },
+  "math1213": {
+    "code": "Math 1213",
+    "name": "Co-ordinate Geometry and Ordinary Differential Equation"
+  },
+  "phy1213": {
+    "code": "Phy 1213",
+    "name": "Physics"
+  }
+}

@@ -14,7 +14,6 @@
 
   <body>
     <!-- Button to open the popup -->
-
     <div class="container">
       <button class="btn btn-success" onclick="togglePopup('assignment-popup')">
         Assignment
@@ -34,28 +33,14 @@
           <h1>Assignment</h1>
           <div class="course_code">
             <div class="form-floating">
-              <select class="form-select" id="course_code">
-                <option value="cse1200">CSE 1200</option>
-                <option value="cse1201">CSE 1201</option>
-                <option value="cse1202">CSE 1202</option>
-                <option value="cse1203">CSE 1203</option>
-                <option value="cse1204">CSE 1204</option>
-                <option value="math1213">Math 1213</option>
-                <option value="hum1213">Hum 1213</option>
-                <option value="phy1213">Phy 1213</option>
-                <option value="phy1214">Phy 1214</option>
-              </select>
+              <select class="form-select" id="course_code"></select>
             </div>
           </div>
           <div class="teacher_name">
             <div class="form-floating">
-              <select class="form-select" id="teacher_name">
-                <option value="TJ">Tasmia Jannat</option>
-                <option value="NIM">Nazrul Islam Mondol</option>
-              </select>
+              <select class="form-select" id="teacher_name"></select>
             </div>
           </div>
-
           <label for="name">Assignment Name:</label>
           <input
             type="text"
@@ -95,30 +80,20 @@
     </div>
 
     <!-- Popup lab cover form -->
-
     <div id="labcover-popup" class="popup">
       <div class="popup-content">
         <form method="post" class="form-container" id="formDataLab">
           <h1>Lab Cover</h1>
           <div class="course_code">
             <div class="form-floating">
-              <select class="form-select" id="course_code_lab">
-                <option value="cse1200">CSE 1200</option>
-                <option value="cse1202">CSE 1202</option>
-                <option value="cse1204">CSE 1204</option>
-                <option value="phy1214">Phy 1214</option>
-              </select>
+              <select class="form-select" id="course_code_lab"></select>
             </div>
           </div>
           <div class="teacher_name">
             <div class="form-floating">
-              <select class="form-select" id="teacher_name_lab">
-                <option value="TJ">Tasmia Jannat</option>
-                <option value="NIM">Nazrul Islam Mondol</option>
-              </select>
+              <select class="form-select" id="teacher_name_lab"></select>
             </div>
           </div>
-
           <label for="experiment_name">Experiment Name:</label>
           <input
             type="text"
@@ -181,18 +156,9 @@
       >
     </div>
 
-    <script>
-      alert("Better To Use A Desktop/Laptop!");
-      function togglePopup(popupId) {
-        const popup = document.getElementById(popupId);
-        popup.classList.toggle("open");
-      }
-    </script>
+    <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.js"></script>
-    <script src="course_data.js"></script>
-    <script src="student_data.js"></script>
-    <script src="teacher_data.js"></script>
     <script src="printassign.js"></script>
     <script src="printlab.js"></script>
     <script

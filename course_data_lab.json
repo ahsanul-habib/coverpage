@@ -1,0 +1,22 @@
+{
+  "cse1200": {
+    "code": "CSE 1200",
+    "name": "Competitive Programming Sessional"
+  },
+  "cse1202": {
+    "code": "CSE 1202",
+    "name": "Data Structure Sessional"
+  },
+  "cse1204": {
+    "code": "CSE 1204",
+    "name": "Object Oriented Programming Sessional"
+  },
+  "eee1252": {
+    "code": "EEE 1251",
+    "name": "Electronic Devices and Circuits Sessional"
+  },
+  "phy1214": {
+    "code": "Phy 1214",
+    "name": "Physics Sessional"
+  }
+}
