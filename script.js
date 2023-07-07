@@ -44,11 +44,12 @@ if (isMobile) {
   var roll_assign = document.querySelector(".roll_assign");
   roll_assign.style.display = "display";
   roll_assign.style.width = "25%";
-  roll_assign.style.marginTop = "-2%";
+  roll_assign.style.marginTop = "-3%";
 
   var roll_Lab = document.querySelector(".roll_lab");
-  roll_Lab.style.left = "50%";
-  roll_Lab.style.top = "63%";
+  roll_Lab.style.display = "display";
+  roll_Lab.style.width = "25%";
+  roll_Lab.style.marginTop = "-3%";
 
   var btns = document.querySelectorAll(".btn");
   for (var i = 0; i < btns.length; i++) {
