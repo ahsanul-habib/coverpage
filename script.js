@@ -15,12 +15,12 @@ const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 if (isMobile) {
   alert("Better To Use A Desktop/Laptop!");
 
-  var experimentNumber = document.querySelector("#experiment_number");
-  experimentNumber.style.margin = "0% auto -5% 6%";
+  // var experimentNumber = document.querySelector("#experiment_number");
+  // experimentNumber.style.margin = "0% auto -5% 6%";
 
   var popupContent = document.querySelectorAll(".popup-content");
   for (var i = 0; i < popupContent.length; i++) {
-    popupContent[i].style.transform = "scale(1.5)";
+    popupContent[i].style.transform = "scale(1.7)";
     popupContent[i].style.maxWidth = "150%";
   }
 
@@ -28,18 +28,20 @@ if (isMobile) {
     ".popup.open .popup-content"
   );
   for (var i = 0; i < openPopupContent.length; i++) {
-    openPopupContent[i].style.transform = "scale(1.3)";
+    openPopupContent[i].style.transform = "scale(1.5)";
   }
 
   var body = document.body;
   body.style.backgroundImage =
     "linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(199, 183, 183, 0.95))";
 
-  var roll = document.getElementById("roll");
-  roll.style.marginLeft = "12%";
+  // var roll = document.getElementById("roll");
+  // roll.style.marginLeft = "12%";
 
-  var rollLab = document.getElementById("roll_lab");
-  rollLab.style.margin = "0% auto 5% 11%";
+  // var rollLab = document.getElementById("roll_lab");
+  // rollLab.style.margin = "0% auto 5% 11%";
+
+  // var roll_assign = document.getElementById("roll_assign");
 
   var btns = document.querySelectorAll(".btn");
   for (var i = 0; i < btns.length; i++) {
