@@ -122,7 +122,7 @@ async function MakeAssignment() {
     });
     page.drawText(studentSeries, {
       x: 130,
-      y: 135,
+      y: 138,
       size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
