@@ -42,8 +42,8 @@ if (isMobile) {
   rollLab.style.margin = "0% auto 5% 11%";
 
   var roll_assign = document.querySelector(".roll_assign");
-  roll_assign.style.left = "50%";
-  roll_assign.style.top = "56%";
+  roll_assign.style.display = "display";
+  roll_assign.style.width = "25%";
 
   var roll_Lab = document.querySelector(".roll_lab");
   roll_Lab.style.left = "50%";
