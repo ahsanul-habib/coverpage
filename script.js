@@ -1,3 +1,15 @@
+const rollValue = localStorage.getItem("roll");
+
+if (rollValue) {
+  document.getElementById("roll").value = rollValue;
+}
+
+const rollValue_lab = localStorage.getItem("roll_lab");
+
+if (rollValue_lab) {
+  document.getElementById("roll_lab").value = rollValue_lab;
+}
+
 const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 
 if (isMobile) {
@@ -5,12 +17,6 @@ if (isMobile) {
 
   var experimentNumber = document.querySelector("#experiment_number");
   experimentNumber.style.margin = "0% auto -5% 6%";
-
-  var experimentNumber = document.querySelector("#date_assign");
-  experimentNumber.style.marginTop = "-6%";
-
-  var experimentNumber = document.querySelector("#date_lab");
-  experimentNumber.style.marginTop = "-6%";
 
   var popupContent = document.querySelectorAll(".popup-content");
   for (var i = 0; i < popupContent.length; i++) {

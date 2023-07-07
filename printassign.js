@@ -50,6 +50,10 @@ async function MakeAssignment() {
   ) {
     console.log("");
   } else {
+    const newRollValue = document.getElementById("roll").value;
+
+    localStorage.setItem("roll", newRollValue);
+
     const button = document.querySelector(".assgnr");
     button.innerText = "Generating...";
 
@@ -118,7 +122,7 @@ async function MakeAssignment() {
     });
     page.drawText(studentSeries, {
       x: 130,
-      y: 135,
+      y: 137,
       size: 12,
       font: timesNewRomanFont,
       color: PDFLib.rgb(0, 0, 0),
