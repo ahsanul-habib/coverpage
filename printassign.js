@@ -117,7 +117,7 @@ async function MakeAssignment() {
       color: PDFLib.rgb(0, 0, 0),
     });
     page.drawText(studentSeries, {
-      x: 120,
+      x: 130,
       y: 135,
       size: 12,
       font: timesNewRomanFont,

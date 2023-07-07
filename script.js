@@ -1,7 +1,52 @@
-const isMobile = window.innerWidth <= 768;
+const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 
 if (isMobile) {
   alert("Better To Use A Desktop/Laptop!");
+
+  var experimentNumber = document.querySelector("#experiment_number");
+  experimentNumber.style.margin = "0% auto -5% 6%";
+
+  var experimentNumber = document.querySelector("#date_assign");
+  experimentNumber.style.marginTop = "-6%";
+
+  var experimentNumber = document.querySelector("#date_lab");
+  experimentNumber.style.marginTop = "-6%";
+
+  var popupContent = document.querySelectorAll(".popup-content");
+  for (var i = 0; i < popupContent.length; i++) {
+    popupContent[i].style.transform = "scale(1.5)";
+    popupContent[i].style.maxWidth = "150%";
+  }
+
+  var openPopupContent = document.querySelectorAll(
+    ".popup.open .popup-content"
+  );
+  for (var i = 0; i < openPopupContent.length; i++) {
+    openPopupContent[i].style.transform = "scale(1.3)";
+  }
+
+  var body = document.body;
+  body.style.backgroundImage =
+    "linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(199, 183, 183, 0.95))";
+
+  var roll = document.getElementById("roll");
+  roll.style.marginLeft = "12%";
+
+  var rollLab = document.getElementById("roll_lab");
+  rollLab.style.margin = "0% auto 5% 11%";
+
+  var btns = document.querySelectorAll(".btn");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].style.transform = "scale(1.3)";
+
+    btns[i].addEventListener("touchstart", function () {
+      this.style.transform = "scale(1.5)";
+    });
+
+    btns[i].addEventListener("touchend", function () {
+      this.style.transform = "scale(1.3)";
+    });
+  }
 }
 
 function togglePopup(popupId) {
