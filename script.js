@@ -44,6 +44,7 @@ if (isMobile) {
   var roll_assign = document.querySelector(".roll_assign");
   roll_assign.style.display = "display";
   roll_assign.style.width = "25%";
+  roll_assign.style.marginTop = "-2%";
 
   var roll_Lab = document.querySelector(".roll_lab");
   roll_Lab.style.left = "50%";
