@@ -50,6 +50,10 @@ async function MakeAssignment() {
   ) {
     console.log("");
   } else {
+    const newRollValue = document.getElementById("roll").value;
+
+    localStorage.setItem("roll", newRollValue);
+
     const button = document.querySelector(".assgnr");
     button.innerText = "Generating...";
 

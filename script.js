@@ -1,3 +1,15 @@
+const rollValue = localStorage.getItem("roll");
+
+if (rollValue) {
+  document.getElementById("roll").value = rollValue;
+}
+
+const rollValue_lab = localStorage.getItem("roll_lab");
+
+if (rollValue_lab) {
+  document.getElementById("roll_lab").value = rollValue_lab;
+}
+
 const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 
 if (isMobile) {

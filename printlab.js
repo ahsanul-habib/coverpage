@@ -54,6 +54,10 @@ async function MakeLabCover() {
   ) {
     console.log("");
   } else {
+    const newRollValue_lab = document.getElementById("roll_lab").value;
+
+    localStorage.setItem("roll_lab", newRollValue_lab);
+
     const button = document.querySelector(".labgnr");
     button.innerText = "Generating...";
 
