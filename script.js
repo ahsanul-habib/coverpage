@@ -7,10 +7,10 @@ if (isMobile) {
   experimentNumber.style.margin = "0% auto -5% 6%";
 
   var experimentNumber = document.querySelector("#date_assign");
-  experimentNumber.style.marginTop = "-3%";
+  experimentNumber.style.marginTop = "-6%";
 
   var experimentNumber = document.querySelector("#date_lab");
-  experimentNumber.style.marginTop = "-3%";
+  experimentNumber.style.marginTop = "-6%";
 
   var popupContent = document.querySelectorAll(".popup-content");
   for (var i = 0; i < popupContent.length; i++) {
