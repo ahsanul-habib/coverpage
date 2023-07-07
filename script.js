@@ -4,7 +4,7 @@ if (isMobile) {
   alert("Better To Use A Desktop/Laptop!");
 
   var experimentNumber = document.querySelector("#experiment_number");
-  experimentNumber.style.margin = "15% auto -5% 6%";
+  experimentNumber.style.margin = "0% auto -5% 6%";
 
   var popupContent = document.querySelectorAll(".popup-content");
   for (var i = 0; i < popupContent.length; i++) {
