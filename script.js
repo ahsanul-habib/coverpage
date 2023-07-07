@@ -3,6 +3,21 @@ const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 if (isMobile) {
   alert("Better To Use A Desktop/Laptop!");
 
+  var experimentName = document.querySelector("#experiment_name");
+  experimentName.style.marginLeft = "43%";
+
+  var assignName = document.querySelector("#assign_name");
+  assignName.style.marginLeft = "43%";
+
+  var experimentNumber = document.querySelector("#experiment_number");
+  experimentNumber.style.marginLeft = "43%";
+
+  var dateLab = document.querySelector("#date_lab");
+  dateLab.style.marginLeft = "43%";
+
+  var dateAssign = document.querySelector("#date_assign");
+  dateAssign.style.marginLeft = "43%";
+
   var popupContent = document.querySelectorAll(".popup-content");
   for (var i = 0; i < popupContent.length; i++) {
     popupContent[i].style.transform = "scale(1.5)";
