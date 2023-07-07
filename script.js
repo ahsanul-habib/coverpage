@@ -22,7 +22,7 @@ if (isMobile) {
     ".popup.open .popup-content"
   );
   for (var i = 0; i < openPopupContent.length; i++) {
-    openPopupContent[i].style.transform = "scale(1.2)";
+    openPopupContent[i].style.transform = "scale(1.3)";
   }
 
   var body = document.body;
