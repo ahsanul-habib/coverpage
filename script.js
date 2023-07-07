@@ -6,6 +6,12 @@ if (isMobile) {
   var experimentNumber = document.querySelector("#experiment_number");
   experimentNumber.style.margin = "0% auto -5% 6%";
 
+  var experimentNumber = document.querySelector("#date_assign");
+  experimentNumber.style.marginTop = "-3%";
+
+  var experimentNumber = document.querySelector("#date_lab");
+  experimentNumber.style.marginTop = "-3%";
+
   var popupContent = document.querySelectorAll(".popup-content");
   for (var i = 0; i < popupContent.length; i++) {
     popupContent[i].style.transform = "scale(1.5)";
