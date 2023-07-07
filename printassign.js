@@ -24,7 +24,7 @@ form.addEventListener("submit", function (e) {
   );
   xhr.onreadystatechange = function () {
     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-      console.log(xhr.responseText);
+      alert(xhr.responseText);
     }
   };
   xhr.send(formData);
@@ -44,11 +44,11 @@ async function MakeAssignment() {
     rollNumber.trim() === "" ||
     DateOfSubmission.trim() === ""
   ) {
-    console.log("All fields are required");
+    alert("All fields are required");
   } else if (
     !(parseInt(rollNumber) >= 2103001 && parseInt(rollNumber) <= 2103180)
   ) {
-    console.log("Invalid roll number");
+    console.log("");
   } else {
     const button = document.querySelector(".assgnr");
     button.innerText = "Generating...";
