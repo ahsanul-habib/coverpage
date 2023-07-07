@@ -113,10 +113,8 @@ body {
   margin: 5% auto;
 }
 
-.roll_assign,
-.roll_lab {
+.roll_assign {
   position: absolute;
-  margin-left: 0%;
 }
 
 #roll {
