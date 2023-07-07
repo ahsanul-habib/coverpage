@@ -40,10 +40,12 @@ if (isMobile) {
 
   var rollLab = document.getElementById("roll_lab");
   rollLab.style.margin = "0% auto 5% 11%";
-  //rollLab.style.position = "";
 
-  var roll_assign = document.getElementById("roll_assign");
-  //roll_assign.style.position = "";
+  var roll_assign = document.querySelector(".roll_assign");
+  roll_assign.style.position = "relative";
+
+  var roll_Lab = document.querySelector(".roll_lab");
+  roll_Lab.style.position = "relative";
 
   var btns = document.querySelectorAll(".btn");
   for (var i = 0; i < btns.length; i++) {
