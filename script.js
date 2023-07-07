@@ -3,12 +3,18 @@ const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 if (isMobile) {
   alert("Better To Use A Desktop/Laptop!");
 
-  var popupContent = document.querySelector(".popup-content");
-  popupContent.style.transform = "scale(1.5)";
-  popupContent.style.maxWidth = "150%";
+  var popupContent = document.querySelectorAll(".popup-content");
+  for (var i = 0; i < popupContent.length; i++) {
+    popupContent[i].style.transform = "scale(1.5)";
+    popupContent[i].style.maxWidth = "150%";
+  }
 
-  var openPopupContent = document.querySelector(".popup.open .popup-content");
-  openPopupContent.style.transform = "scale(1.2)";
+  var openPopupContent = document.querySelectorAll(
+    ".popup.open .popup-content"
+  );
+  for (var i = 0; i < openPopupContent.length; i++) {
+    openPopupContent[i].style.transform = "scale(1.2)";
+  }
 
   var body = document.body;
   body.style.backgroundImage =

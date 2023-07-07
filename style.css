@@ -219,7 +219,7 @@ body {
   border: none !important;
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   .popup-content {
     transform: scale(1.5);
     max-width: 150%;
@@ -246,4 +246,4 @@ body {
   .btn:hover {
     transform: scale(1.5);
   }
-}
+} */
