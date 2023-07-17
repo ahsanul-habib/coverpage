@@ -1,2 +1,3 @@
 # coverpage
-### A Simple CoverPage Builder for CSE Dept. with using HTML, CSS, Bootstrap, JavaScript, PHP & MySQL (The backend is on 000webhost).
+## A Simple CoverPage Builder for CSE Dept. 
+### Using HTML, CSS, Bootstrap, JavaScript, PHP & MySQL (The backend is on 000webhost).
