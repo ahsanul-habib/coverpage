@@ -50,37 +50,11 @@ function togglePopup(popupId) {
 }
 
 let teacher_list = {};
-fetch("teacher_data.json")
-  .then((response) => response.json())
-  .then((data) => {
-    teacher_list = data;
-  })
-  .catch((error) => {
-    console.error("Error: ", error);
-  });
-
 let course_details = {};
-fetch("course_data.json")
-  .then((response) => response.json())
-  .then((data) => {
-    course_details = data;
-  })
-  .catch((error) => {
-    console.error("Error: ", error);
-  });
-
 let course_details_lab = {};
-fetch("course_data_lab.json")
-  .then((response) => response.json())
-  .then((data) => {
-    course_details_lab = data;
-  })
-  .catch((error) => {
-    console.error("Error: ", error);
-  });
-
 let student_data = {};
-fetch("student_data.json")
+
+fetch("../data/student_data.json")
   .then((response) => response.json())
   .then((data) => {
     student_data = data;
@@ -89,9 +63,10 @@ fetch("student_data.json")
     console.error("Error: ", error);
   });
 
-fetch("teacher_data.json")
+fetch("../data/teacher_data.json")
   .then((response) => response.json())
   .then((data) => {
+    teacher_list = data;
     var options = "";
     Object.keys(data).forEach((element) => {
       options +=
@@ -108,9 +83,10 @@ fetch("teacher_data.json")
     console.error("Error: ", error);
   });
 
-fetch("course_data.json")
+fetch("../data/course_data.json")
   .then((response) => response.json())
   .then((data) => {
+    course_details = data;
     var options = "";
     Object.keys(data).forEach((element) => {
       options +=
@@ -126,9 +102,10 @@ fetch("course_data.json")
     console.error("Error: ", error);
   });
 
-fetch("course_data_lab.json")
+fetch("../data/course_data_lab.json")
   .then((response) => response.json())
   .then((data) => {
+    course_details_lab = data;
     var options = "";
     Object.keys(data).forEach((element) => {
       options +=
