@@ -54,7 +54,7 @@ let course_details = {};
 let course_details_lab = {};
 let student_data = {};
 
-fetch("../data/student_data.json")
+fetch("https://github.com/SADMAN30102001SAKIB/Coverpage_Builder/blob/main/data/student_data.json")
   .then((response) => response.json())
   .then((data) => {
     student_data = data;
@@ -63,7 +63,7 @@ fetch("../data/student_data.json")
     console.error("Error: ", error);
   });
 
-fetch("../data/teacher_data.json")
+fetch("https://github.com/SADMAN30102001SAKIB/Coverpage_Builder/blob/main/data/teacher_data.json")
   .then((response) => response.json())
   .then((data) => {
     teacher_list = data;
@@ -83,7 +83,7 @@ fetch("../data/teacher_data.json")
     console.error("Error: ", error);
   });
 
-fetch("../data/course_data.json")
+fetch("https://github.com/SADMAN30102001SAKIB/Coverpage_Builder/blob/main/data/course_data.json")
   .then((response) => response.json())
   .then((data) => {
     course_details = data;
@@ -102,7 +102,7 @@ fetch("../data/course_data.json")
     console.error("Error: ", error);
   });
 
-fetch("../data/course_data_lab.json")
+fetch("https://github.com/SADMAN30102001SAKIB/Coverpage_Builder/blob/main/data/course_data_lab.json")
   .then((response) => response.json())
   .then((data) => {
     course_details_lab = data;
