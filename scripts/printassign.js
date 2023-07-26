@@ -44,7 +44,7 @@ async function MakeAssignment() {
     rollNumber.trim() === "" ||
     DateOfSubmission.trim() === ""
   ) {
-    alert("All fields are required!");
+    alert("All fields are required");
   } else if (
     !(parseInt(rollNumber) >= 2103001 && parseInt(rollNumber) <= 2103180)
   ) {
